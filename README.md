@@ -68,4 +68,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-Built with ☕ and ✨ by [Your Name]. Check out the live demo [here](https://shyam1029.github.io/Three.js---6/)!
+Built with ☕ and ✨ by Syam satish. Check out the live demo [here](https://shyam1029.github.io/Three.js---6/)!
