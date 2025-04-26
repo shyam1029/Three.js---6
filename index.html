@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>AetherRush</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <audio id="crash-audio">
+      <source src="./assets/music/crash-audio.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="bonus-audio">
+      <source src="./assets/music/reward-audio.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="game-audio">
+      <source src="./assets/music/game-audio.mp3" type="audio/mpeg">
+    </audio>
+    <div class="progress-bar-container">
+      <label for="progress-bar" class="progress-bar">Started Loading...</label>
+      <progress id="progress-bar" value="0"></progress>
+      <br />
+    </div>
+
+    <div class="menu-container" style="display: none">
+      <div class="top-right-content">
+        <h1>Welcome to AetherRush!</h1>
+        <h3>Use Arrow Keys: ← Left, → Right, ↑ Jump to avoid clouds</h3>
+        <h3>Collect glowing orbs for bonus points</h3>
+      </div>
+      <h2>Click to Start</h2>
+    </div>
+
+    <div id="score-container">
+      <div class="score" id="max-score">Max score : <span> 0 </span></div>
+      <div class="score" id="curr-score">Curr score : <span> 0 </span></div>
+    </div>
+
+    <div id="level-container">
+      <div>Level 1</div>
+    </div>
+
+    <canvas class="webgl"></canvas>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.querySelector(".menu-container").style.display = "flex";
+        }, 100);
+
+        const startButton = document.querySelector(".menu-container h2");
+        startButton.addEventListener("click", () => {
+          console.log("Start button clicked, attempting full-screen...");
+          enterFullscreen();
+          // Hide menu and start game
+          document.querySelector(".menu-container").style.display = "none";
+          setTimeout(() => {
+            if (window.gameStarts !== undefined) window.gameStarts = true;
+          }, 2000);
+        });
+
+        function enterFullscreen() {
+          const elem = document.documentElement;
+          if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.mozRequestFullScreen) {
+            // Firefox
+            elem.mozRequestFullScreen();
+          } else if (elem.webkitRequestFullscreen) {
+            // Chrome, Safari, Edge
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) {
+            // IE/Edge
+            elem.msRequestFullscreen();
+          } else {
+            console.log("Full-screen API not supported in this browser.");
+          }
+        }
+
+        window.addEventListener("load", () => {
+          if (window.manager && typeof manager.onLoad === "function") {
+            manager.onLoad = () => {
+            };
+          } else {
+          }
+        });
+      });
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) {
+          // HIDDEN
+        } else {
+          location.reload();
+        }
+      });
+    </script>
+
+    <!-- Three.js -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.172.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.172.0/examples/jsm/"
+        }
+      }
+    </script>
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+    <script src="main.js" type="module"></script>
+  </body>
+</html>
