@@ -15,7 +15,7 @@ AetherRush is an immersive 3D endless runner game built with Three.js, where pla
 ## Tech Stack
 
 - **Frontend**: HTML5, CSS3, JavaScript (ES6 Modules)
-- **3D Graphics**: Three.js (r161), GLTFLoader for 3D models
+- **3D Graphics**: Three.js (r172), GLTFLoader for 3D models
 - **Animation**: GSAP for player movements, Three.js AnimationMixer for model animations
 - **Styling**: Custom CSS with Montserrat and Exo 2 fonts, futuristic design with glow effects
 - **Assets**: Custom 3D models (.glb), particle textures, and background images
