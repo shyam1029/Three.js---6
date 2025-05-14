@@ -1186,7 +1186,7 @@ function animation() {
         updateGameState(frameTime);
         frameAccumulator -= frameTime;
     }
-    controls.update();
+    // controls.update();
     if (mixerPh) mixerPh.update(0.0075);
     if (mixerP) mixerP.update(0.05);
     updateEffects(frameTime, elapsedTime);
