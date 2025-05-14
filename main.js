@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-//import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+// import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import GUI from "https://cdn.jsdelivr.net/npm/lil-gui@0.19/+esm";
 import { gsap } from "https://cdn.skypack.dev/gsap";
 
@@ -1186,6 +1186,7 @@ function animation() {
         updateGameState(frameTime);
         frameAccumulator -= frameTime;
     }
+    // controls.update();
     if (mixerPh) mixerPh.update(0.0075);
     if (mixerP) mixerP.update(0.05);
     updateEffects(frameTime, elapsedTime);
