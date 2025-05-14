@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+//import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import GUI from "https://cdn.jsdelivr.net/npm/lil-gui@0.19/+esm";
 import { gsap } from "https://cdn.skypack.dev/gsap";
 
@@ -33,9 +33,9 @@ camera.position.set(-0.04, 1.34, /Mobi|Android/i.test(navigator.userAgent) ? 50.
 scene.add(camera);
 let renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
 renderer.setSize(sizes.width, sizes.height);
-let controls = new OrbitControls(camera, canvas);
-controls.enableDamping = true;
-controls.dampingFactor = 0.01;
+// let controls = new OrbitControls(camera, canvas);
+// controls.enableDamping = true;
+// controls.dampingFactor = 0.01;
 let player, playerBox, playerBoxHelper, currentModel, phoenixModel, pegasusModel, sonGokuModel, mixerP, mixerPh;
 let moon, sonM, sonE, particles, ambientLight, directionalLight;
 let playGround1, playGround2, playGround3;
